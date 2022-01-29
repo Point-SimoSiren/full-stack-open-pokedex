@@ -44,6 +44,17 @@ module.exports = {
       "error", { "before": true, "after": true }
     ],
     "no-console": "error",
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    
+    // Added 29.1.2022 - Simo
+    "no-console": "off",
+    "no-restricted-syntax": [
+        "error",
+        {
+            "selector": "CallExpression[callee.object.name='console'][callee.property.name!=/^(log|warn|error|info|trace)$/]",
+            "message": "Unexpected property on console object was called"
+        }
+    ]
+    
   }
 }
