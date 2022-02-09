@@ -31,7 +31,6 @@ const App = () => {
         <Route path="/pokemon/:name" render={(routeParams) => {
           const pokemonId = pokemonList.find(({ name }) => name === routeParams.match.params.name).id
           const previous = pokemonList.find(({ id }) => id === pokemonId - 1)
-          
           const next = pokemonList.find(({ id }) => id === pokemonId + 1)
           return <PokemonPage pokemonList={pokemonList} previous={previous} next={next} />
         }} />
